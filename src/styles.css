@@ -76,12 +76,22 @@ li {
 }
 .song-tile {
   display: flex;
-  gap: 1rem;
+  justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   padding: 1rem;
   box-shadow: 0 2rem 8rem rgba(255, 255, 255, 0.3);
-  width: fit-content;
+  width: 300px;
   border-radius: 10px 30px;
   background-color: purple;
   color: white;
+}
+.search-result {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-radius: 3rem;
+  width: fit-content;
+  box-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1.5rem;
 }

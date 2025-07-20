@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useRef } from "react";
 import axios from "axios";
 import { SongListContext } from "../context/SongListContextHandler.jsx";
 import "../styles.css";
@@ -7,14 +7,21 @@ const Search_Song = () => {
   const { songList, setSongList } = useContext(SongListContext);
   const [input, setInput] = useState("");
   const [searchResult, setSearchResult] = useState({});
+  const divRef = useRef(null);
 
-  const searchSongs = () => {
+  const searchSongs = (e) => {
+    e.preventDefault();
     let query = input.trim().toLowerCase();
     if (!query) return;
     const result = songList.filter(
       (song) => query === song.title.toLowerCase()
     );
     setSearchResult(result[0] || null);
+    if (searchResult) {
+      divRef.current.classList.add("search-result");
+    } else {
+      divRef.current.setAttribute("style", "display: none");
+    }
     setInput("");
   };
 
@@ -31,9 +38,9 @@ const Search_Song = () => {
       </form>
 
       {searchResult ? (
-        <div>
-          {searchResult.title}
-          {searchResult.artist}
+        <div ref={divRef}>
+          <h3>{searchResult.title}</h3>
+          <p>{searchResult.artist}</p>
         </div>
       ) : (
         <p>No song found</p>
