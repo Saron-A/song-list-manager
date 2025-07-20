@@ -18,6 +18,18 @@ const Song_List = () => {
     fetchSongs();
   }, []);
 
+  const handleDelete = async (item) => {
+    try {
+      await axios.delete(`/api/songs/${item.id}`);
+      let newList = songList.filter((song) => song.id !== item.id);
+      setSongList(newList);
+      let newData = await axios.get("/api/songs");
+      console.log(newData.data.songs);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <ul>
@@ -25,8 +37,15 @@ const Song_List = () => {
           <li key={index}>
             <div className="song-tile">
               <img src={musicNotes} alt="music notes icon" />
-              <h4>{song.title}</h4>
-              <p>By: {song.artist}</p>
+              <div className="song-info">
+                {" "}
+                <h4>{song.title}</h4>
+                <p>By: {song.artist}</p>
+              </div>
+              <div className="btns">
+                <button>✏️</button>
+                <button onClick={() => handleDelete(song)}>🗑️</button>
+              </div>
             </div>
           </li>
         ))}
