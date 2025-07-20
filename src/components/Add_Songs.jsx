@@ -1,10 +1,10 @@
 import React, { useState, useContext, useRef } from "react";
-import SongListContext from "../context/SongListContextHandler.jsx";
+import axios from "axios";
+import { SongListContext } from "../context/SongListContextHandler.jsx";
 import "../styles.css";
 
 const Add_Songs = () => {
-  const { songList, setSongList, newSong, setNewSong } =
-    useContext(SongListContext);
+  const { songList, setSongList } = useContext(SongListContext);
   const [input, setInput] = useState({
     title: "",
     artist: "",
@@ -15,28 +15,42 @@ const Add_Songs = () => {
     dialogRef.current.showModal();
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const response = await axios.post("/api/songs", input);
+      setSongList((prevList) => [...prevList, response.data.song]);
+      setInput({
+        title: "",
+        artist: "",
+      });
+      dialogRef.current.close();
+    } catch (err) {
+      console.error("Error adding song:", err);
+    }
   };
 
   return (
     <>
       <button onClick={handleClick}>Add Songs</button>
       <dialog ref={dialogRef}>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Name of the song"
             value={input.title}
             onChange={(e) => setInput({ ...input, title: e.target.value })}
+            required
           />
           <input
             type="text"
             placeholder="Name of the artist"
             value={input.artist}
             onChange={(e) => setInput({ ...input, artist: e.target.value })}
+            required
           />
-          <button onSubmit={(e) => handleSubmit()}>Add</button>
+          <button type="submit">Add</button>
         </form>
       </dialog>
     </>
