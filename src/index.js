@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { createServer, Model } from "miragejs";
-
+import SongListContextHandler from "./context/SongListContextHandler.jsx";
 createServer({
   models: {
     song: Model,
@@ -40,4 +40,9 @@ createServer({
 });
 
 const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+
+root.render(
+  <SongListContextHandler>
+    <App />
+  </SongListContextHandler>
+);

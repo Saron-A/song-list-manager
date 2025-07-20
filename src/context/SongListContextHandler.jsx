@@ -2,10 +2,10 @@ import React, { createContext, useState } from "react";
 
 export const SongListContext = createContext();
 
-const SongListContextHandler = () => {
+const SongListContextHandler = ({ children }) => {
   const [songList, setSongList] = useState([]);
   return (
-    <SongListContext.Provider values={{ songList, setSongList }}>
+    <SongListContext.Provider value={{ songList, setSongList }}>
       {children}
     </SongListContext.Provider>
   );
