@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import axios from "axios";
 import { SongListContext } from "../context/SongListContextHandler.jsx";
 import "../styles.css";
@@ -24,6 +24,15 @@ const Search_Song = () => {
     }
     setInput("");
   };
+  useEffect(() => {
+    if (searchResult) {
+      const timer = setTimeout(() => {
+        setSearchResult(null);
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer); // cleanup if component re-renders
+    }
+  }, [searchResult]);
 
   return (
     <div className="input-btn-result">
