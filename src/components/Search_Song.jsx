@@ -20,17 +20,16 @@ const Search_Song = () => {
 
   return (
     <div className="input-btn-result">
-      <div className="input-btn">
-        <form action="" onSubmit={searchSongs}>
-          <input
-            type="text"
-            placeholder="Search Song..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button type="submit">Search</button>
-        </form>
-      </div>
+      <form action="" onSubmit={searchSongs} className="input-btn">
+        <input
+          type="text"
+          placeholder="Search Song..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+
       {searchResult ? (
         <div>
           {searchResult.title}
