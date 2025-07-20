@@ -23,14 +23,14 @@ createServer({
       artist: "Olivia Rodrigo",
     });
     server.create("song", {
-      title: "Stay",
-      artist: "The Kid LAROI & Justin Bieber",
+      title: "Still Here",
+      artist: "Seungmin (StrayKids)",
     });
     server.create("song", { title: "good 4 u", artist: "Olivia Rodrigo" });
     server.create("song", { title: "Bad Habits", artist: "Ed Sheeran" });
     server.create("song", {
-      title: "MONTERO (Call Me By Your Name)",
-      artist: "Lil Nas X",
+      title: "Face",
+      artist: "GOT7",
     });
     server.create("song", { title: "Butter", artist: "BTS" });
     server.create("song", { title: "Shivers", artist: "Ed Sheeran" });

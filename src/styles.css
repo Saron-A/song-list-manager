@@ -1,5 +1,5 @@
 body {
-  background-color: pink;
+  background-color: #ccd5ff;
 }
 
 .container {
@@ -40,7 +40,7 @@ body {
   margin: 0 auto;
   border-radius: 2rem;
   box-shadow: 0 1rem 4rem rgba(255, 255, 255, 0.3);
-  background-color: lightpink;
+  background-color: #e4e9ff;
   padding: 1rem 2rem;
 }
 
@@ -76,14 +76,14 @@ li {
 }
 .song-tile {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
+
   padding: 1rem;
   box-shadow: 0 2rem 8rem rgba(255, 255, 255, 0.3);
   width: 300px;
   border-radius: 10px 30px;
-  background-color: purple;
+  background-color: #707eff;
   color: white;
 }
 .search-result {

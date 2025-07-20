@@ -17,11 +17,7 @@ const Search_Song = () => {
       (song) => query === song.title.toLowerCase()
     );
     setSearchResult(result[0] || null);
-    if (searchResult) {
-      divRef.current.classList.add("search-result");
-    } else {
-      divRef.current.setAttribute("style", "display: none");
-    }
+
     setInput("");
   };
   useEffect(() => {
