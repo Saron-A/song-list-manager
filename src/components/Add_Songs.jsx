@@ -32,10 +32,13 @@ const Add_Songs = () => {
   };
 
   return (
-    <>
-      <button onClick={handleClick}>Add Songs</button>
+    <div className="add-songs-btn">
+      <button onClick={handleClick} className="btn">
+        Add Songs
+      </button>
       <dialog ref={dialogRef}>
         <form onSubmit={handleSubmit}>
+          <h2>New Song</h2>
           <input
             type="text"
             placeholder="Name of the song"
@@ -53,7 +56,7 @@ const Add_Songs = () => {
           <button type="submit">Add</button>
         </form>
       </dialog>
-    </>
+    </div>
   );
 };
 
