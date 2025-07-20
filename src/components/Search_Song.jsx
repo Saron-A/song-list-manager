@@ -32,12 +32,13 @@ const Search_Song = () => {
 
   return (
     <div className="input-btn-result">
-      <form action="" onSubmit={searchSongs} className="input-btn">
+      <form onSubmit={searchSongs} className="input-btn">
         <input
           type="text"
           placeholder="Search Song..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          required
         />
         <button type="submit">Search</button>
       </form>

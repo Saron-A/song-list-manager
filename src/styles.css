@@ -1,18 +1,22 @@
-body {
-  background-color: #ccd5ff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 3rem;
-  padding: 1rem 2.5rem;
+  padding: 2rem;
+  background-color: #ccd5ff;
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  line-height: 0.1;
+  line-height: 1.1;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0 auto;
@@ -68,6 +72,8 @@ img {
 }
 ul {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 }
@@ -102,7 +108,7 @@ li {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: #00009999;
+  background-color: purple;
   border: none;
   color: white;
   transition: all 200ms ease-in-out;
@@ -110,7 +116,7 @@ li {
 
 .add-songs-btn .btn:hover {
   background-color: white;
-  color: #00009999;
+  color: purple;
   cursor: pointer;
   transform: scale(1.05);
 }
@@ -153,4 +159,23 @@ form button:hover {
   color: #00009999;
   cursor: pointer;
   transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .input-btn-result {
+    width: 100%;
+  }
+  .input-btn {
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .input-btn input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
 }
