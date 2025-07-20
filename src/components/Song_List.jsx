@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { SongListContext } from "../context/SongListContextHandler.jsx";
 import axios from "axios";
 import musicNotes from "../assets/musical-notes.png";
+import "../styles.css";
 
 const Song_List = () => {
   const { songList, setSongList } = useContext(SongListContext);
@@ -22,7 +23,7 @@ const Song_List = () => {
       <ul>
         {songList.map((song, index) => (
           <li key={index}>
-            <div>
+            <div className="song-tile">
               <img src={musicNotes} alt="music notes icon" />
               <h4>{song.title}</h4>
               <p>By: {song.artist}</p>

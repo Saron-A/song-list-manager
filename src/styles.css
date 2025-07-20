@@ -1,0 +1,27 @@
+body {
+  background-color: pink;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+li {
+  list-style: none;
+}
+.song-tile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 2rem 8rem rgba(255, 255, 255, 0.3);
+  width: fit-content;
+  border-radius: 10px 30px;
+  background-color: purple;
+  color: white;
+}
