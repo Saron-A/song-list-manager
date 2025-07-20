@@ -11,6 +11,31 @@ createServer({
   seeds(server) {
     server.create("song", { title: "Easy On Me", artist: "Adele" });
     server.create("song", { title: "Peaches", artist: "Justin Bieber" });
+    server.create("song", { title: "Blinding Lights", artist: "The Weeknd" });
+    server.create("song", { title: "Levitating", artist: "Dua Lipa" });
+    server.create("song", {
+      title: "Watermelon Sugar",
+      artist: "Harry Styles",
+    });
+    server.create("song", { title: "Save Your Tears", artist: "The Weeknd" });
+    server.create("song", {
+      title: "drivers license",
+      artist: "Olivia Rodrigo",
+    });
+    server.create("song", {
+      title: "Stay",
+      artist: "The Kid LAROI & Justin Bieber",
+    });
+    server.create("song", { title: "good 4 u", artist: "Olivia Rodrigo" });
+    server.create("song", { title: "Bad Habits", artist: "Ed Sheeran" });
+    server.create("song", {
+      title: "MONTERO (Call Me By Your Name)",
+      artist: "Lil Nas X",
+    });
+    server.create("song", { title: "Butter", artist: "BTS" });
+    server.create("song", { title: "Shivers", artist: "Ed Sheeran" });
+    server.create("song", { title: "As It Was", artist: "Harry Styles" });
+    server.create("song", { title: "Anti-Hero", artist: "Taylor Swift" });
   },
 
   routes() {

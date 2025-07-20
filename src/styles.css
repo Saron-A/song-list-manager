@@ -2,13 +2,50 @@ body {
   background-color: pink;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem 2.5rem;
+}
+
+.input-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 4rem rgba(255, 255, 255, 0.3);
+  background-color: lightpink;
+  padding: 1rem 2rem;
+}
+
+.input-btn input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.input-btn button {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: purple;
+  border: none;
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.3);
+}
+
 img {
   width: 75px;
   height: 75px;
 }
 ul {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 li {
