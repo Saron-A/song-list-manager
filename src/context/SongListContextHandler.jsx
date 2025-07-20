@@ -4,8 +4,11 @@ export const SongListContext = createContext();
 
 const SongListContextHandler = ({ children }) => {
   const [songList, setSongList] = useState([]);
+  const [newSong, setNewSong] = useState({});
   return (
-    <SongListContext.Provider value={{ songList, setSongList }}>
+    <SongListContext.Provider
+      value={{ songList, setSongList, newSong, setNewSong }}
+    >
       {children}
     </SongListContext.Provider>
   );
