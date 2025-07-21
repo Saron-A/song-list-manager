@@ -4,31 +4,35 @@ import { SongListContext } from "../context/SongListContextHandler.jsx";
 import "../styles.css";
 
 const Search_Song = () => {
-  const { songList, setSongList } = useContext(SongListContext);
+  const { songList } = useContext(SongListContext);
   const [input, setInput] = useState("");
-  const [searchResult, setSearchResult] = useState({});
+  const [searchResult, setSearchResult] = useState(null); // start as null
+  const [showResult, setShowResult] = useState(false); // controls visibility
   const divRef = useRef(null);
+
+  useEffect(() => {
+    if (showResult) {
+      const timer = setTimeout(() => {
+        setShowResult(false);
+        setSearchResult(null);
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer); // cleanup
+    }
+  }, [showResult]);
 
   const searchSongs = (e) => {
     e.preventDefault();
     let query = input.trim().toLowerCase();
     if (!query) return;
+
     const result = songList.filter(
       (song) => query === song.title.toLowerCase()
     );
     setSearchResult(result[0] || null);
-
+    setShowResult(true);
     setInput("");
   };
-  useEffect(() => {
-    if (searchResult) {
-      const timer = setTimeout(() => {
-        setSearchResult(null);
-      }, 5000); // 5 seconds
-
-      return () => clearTimeout(timer); // cleanup if component re-renders
-    }
-  }, [searchResult]);
 
   return (
     <div className="input-btn-result">
@@ -42,16 +46,18 @@ const Search_Song = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <div ref={divRef}>
-        {searchResult ? (
-          <>
-            <h3>{searchResult.title}</h3>
-            <p>{searchResult.artist}</p>
-          </>
-        ) : (
-          <p>No song found</p>
-        )}
-      </div>
+      {showResult && (
+        <div ref={divRef}>
+          {searchResult ? (
+            <>
+              <h3>{searchResult.title}</h3>
+              <p>{searchResult.artist}</p>
+            </>
+          ) : (
+            <p>No song found</p>
+          )}
+        </div>
+      )}
     </div>
   );
 };
