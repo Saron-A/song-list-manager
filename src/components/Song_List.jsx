@@ -7,6 +7,7 @@ import "../styles.css";
 const Song_List = () => {
   const { songList, setSongList } = useContext(SongListContext);
   const [editedSong, setEditedSong] = useState({
+    id: "",
     title: "",
     artist: "",
   });
@@ -28,13 +29,29 @@ const Song_List = () => {
     dialogRef.current.showModal();
   };
 
-  const implementEdit = (e, id) => {
+  const implementEdit = async (e) => {
     e.preventDefault();
-    const updatedSong = songList.map((song) =>
-      song.id === id ? editedSong : song
-    );
-    setSongList(updatedSong);
-    dialog.current.close();
+    // const updatedSongList = songList.map((song) =>
+    //   song.id === editedSong.id ? editedSong : song
+    // );
+    // setSongList(updatedSongList);
+    // dialogRef.current.close();
+
+    try {
+      const response = await axios.put(
+        `/api/songs/${editedSong.id}`,
+        editedSong
+      );
+      const updated = response.data.song;
+
+      const updatedSongList = songList.map((song) =>
+        song.id === updated.id ? updated : song
+      );
+      setSongList(updatedSongList);
+      dialogRef.current.close();
+    } catch (err) {
+      console.error("Error editing song:", err);
+    }
   };
 
   const handleDelete = async (item) => {
@@ -53,7 +70,7 @@ const Song_List = () => {
     <div>
       <ul>
         {songList.map((song, index) => (
-          <li key={index}>
+          <li key={song.id}>
             <div className="song-tile">
               <img src={musicNotes} alt="music notes icon" />
               <div className="song-info">
@@ -67,7 +84,7 @@ const Song_List = () => {
               </div>
               <dialog ref={dialogRef}>
                 <h2>Edit Song Information</h2>
-                <form onSubmit={(e) => implementEdit(e, song.id)}>
+                <form onSubmit={(e) => implementEdit(e, song)}>
                   <input
                     type="text"
                     placeholder="Song title"
