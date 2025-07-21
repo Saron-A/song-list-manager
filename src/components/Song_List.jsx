@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { SongListContext } from "../context/SongListContextHandler.jsx";
 import axios from "axios";
 import musicNotes from "../assets/musical-notes.png";
@@ -12,6 +13,7 @@ const Song_List = () => {
     artist: "",
   });
   const dialogRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSongs = async () => {
@@ -66,12 +68,19 @@ const Song_List = () => {
     }
   };
 
+  const navigateToSongPage = (id) => {
+    navigate(`/songpage/${id}`);
+  };
+
   return (
     <div>
       <ul>
         {songList.map((song, index) => (
           <li key={song.id}>
-            <div className="song-tile">
+            <div
+              className="song-tile"
+              onClick={() => navigateToSongPage(song.id)}
+            >
               <img src={musicNotes} alt="music notes icon" />
               <div className="song-info">
                 {" "}

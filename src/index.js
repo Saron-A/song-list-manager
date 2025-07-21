@@ -2,6 +2,8 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { createServer, Model } from "miragejs";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from "./routes.jsx";
 import SongListContextHandler from "./context/SongListContextHandler.jsx";
 createServer({
   models: {
@@ -66,8 +68,9 @@ createServer({
 
 const root = createRoot(document.getElementById("root"));
 
+const route = createBrowserRouter(routes);
 root.render(
   <SongListContextHandler>
-    <App />
+    <RouterProvider router={route} />
   </SongListContextHandler>
 );
