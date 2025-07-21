@@ -1,15 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Song_Page from "../components/Song_Page.jsx";
+import "../styles.css";
 
 const SongPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="song-page-container">
+    <div class="song-page-container">
       <Song_Page />
-      <button className="btn" onClick={() => navigate("/")}>
-        🔙
-      </button>
+      <button onClick={() => navigate("/")}>🔙</button>
     </div>
   );
 };

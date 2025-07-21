@@ -116,6 +116,18 @@ li {
   border-radius: 1rem;
 }
 
+.song-page-container button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: purple;
+  border: none;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
 .btn {
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
@@ -178,8 +190,9 @@ form button:hover {
 .song-page-container {
   background-color: #e4e9ff;
   height: 99vh;
-  padding: 1rem 2rem;
   display: flex;
+  padding: 1rem;
+  flex-direction: column;
 }
 
 .song-page-content {
@@ -193,6 +206,7 @@ form button:hover {
   color: white;
   width: 70vw;
   border-radius: 6px 50% 6px 6px;
+  height: fit-content;
 }
 
 .song-page-content h1 {
@@ -248,5 +262,72 @@ form button:hover {
     border: none;
     outline: none;
     background-color: transparent;
+  }
+  body {
+    background-color: #e4e9ff;
+    width: 100vw;
+  }
+  .song-page-container {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .song-page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 5rem auto;
+    padding: 2rem 1rem;
+    box-shadow: 0.125rem 0.25rem 1rem rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #707eff, purple);
+    color: white;
+    width: fit-content;
+    border-radius: 4px;
+    height: fit-content;
+  }
+
+  .song-page-content h1 {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  #music-player-icon {
+    height: 13rem;
+    width: 20rem;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 50%;
+  }
+
+  .song-page-content .icon-info-s {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .song-page-content .icon-info {
+    display: flex;
+    gap: 1rem;
+    width: 60%;
+
+    align-items: center;
+    transition: all 200ms ease-in-out;
+  }
+  .song-page-content .icon-info img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding: 0.25rem;
+  }
+
+  .song-page-container button {
+    padding: 1rem 2.5rem;
+    font-size: larger;
+    background-color: rgba(142, 20, 142, 0.82);
   }
 }
