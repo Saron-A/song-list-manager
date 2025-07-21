@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { SongListContext } from "../context/SongListContextHandler.jsx";
 import axios from "axios";
 import musicNotes from "../assets/musical-notes.png";
@@ -6,6 +6,11 @@ import "../styles.css";
 
 const Song_List = () => {
   const { songList, setSongList } = useContext(SongListContext);
+  const [editedSong, setEditedSong] = useState({
+    title: "",
+    artist: "",
+  });
+  const dialogRef = useRef(null);
 
   useEffect(() => {
     const fetchSongs = async () => {
@@ -17,6 +22,20 @@ const Song_List = () => {
 
     fetchSongs();
   }, []);
+
+  const handleEdit = (item) => {
+    setEditedSong({ ...item });
+    dialogRef.current.showModal();
+  };
+
+  const implementEdit = (e, id) => {
+    e.preventDefault();
+    const updatedSong = songList.map((song) =>
+      song.id === id ? editedSong : song
+    );
+    setSongList(updatedSong);
+    dialog.current.close();
+  };
 
   const handleDelete = async (item) => {
     try {
@@ -43,9 +62,31 @@ const Song_List = () => {
                 <p>By: {song.artist}</p>
               </div>
               <div className="btns">
-                <button>✏️</button>
+                <button onClick={() => handleEdit(song)}>✏️</button>
                 <button onClick={() => handleDelete(song)}>🗑️</button>
               </div>
+              <dialog ref={dialogRef}>
+                <h2>Edit Song Information</h2>
+                <form onSubmit={(e) => implementEdit(e, song.id)}>
+                  <input
+                    type="text"
+                    placeholder="Song title"
+                    value={editedSong.title}
+                    onChange={(e) =>
+                      setEditedSong({ ...editedSong, title: e.target.value })
+                    }
+                  />
+                  <input
+                    type="text"
+                    placeholder="Song Artist"
+                    value={editedSong.artist}
+                    onChange={(e) =>
+                      setEditedSong({ ...editedSong, artist: e.target.value })
+                    }
+                  />
+                  <button type="submit">Edit</button>
+                </form>
+              </dialog>
             </div>
           </li>
         ))}

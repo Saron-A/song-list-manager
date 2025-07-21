@@ -42,15 +42,16 @@ const Search_Song = () => {
         />
         <button type="submit">Search</button>
       </form>
-
-      {searchResult ? (
-        <div ref={divRef}>
-          <h3>{searchResult.title}</h3>
-          <p>{searchResult.artist}</p>
-        </div>
-      ) : (
-        <p>No song found</p>
-      )}
+      <div ref={divRef}>
+        {searchResult ? (
+          <>
+            <h3>{searchResult.title}</h3>
+            <p>{searchResult.artist}</p>
+          </>
+        ) : (
+          <p>No song found</p>
+        )}
+      </div>
     </div>
   );
 };
