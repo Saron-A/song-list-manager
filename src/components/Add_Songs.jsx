@@ -53,6 +53,34 @@ const Add_Songs = () => {
             onChange={(e) => setInput({ ...input, artist: e.target.value })}
             required
           />
+          <input
+            type="text"
+            placeholder="Album of the song"
+            value={input.album}
+            onChange={(e) => setInput({ ...input, album: e.target.value })}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Year of release"
+            value={input.year}
+            onChange={(e) => setInput({ ...input, year: e.target.value })}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Genre of the song"
+            value={input.genre}
+            onChange={(e) => setInput({ ...input, genre: e.target.value })}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Duration of the song"
+            value={input.duration}
+            onChange={(e) => setInput({ ...input, duration: e.target.value })}
+            required
+          />
           <button type="submit">Add</button>
           <button type="button" onClick={() => dialogRef.current.close()}>
             Cancel

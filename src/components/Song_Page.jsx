@@ -9,10 +9,12 @@ const Song_Page = () => {
   const song = songList.find((song) => song.id === id);
 
   return (
-    <div>
-      <h1>Song Details</h1>
-      <p>{song.title}</p>
+    <div className="song-page-container">
+      <h1>{song.title}</h1>
+
       <p>{song.artist}</p>
+      <p>{}</p>
+      <img src={song.coverImage} alt="song-cover-image" />
     </div>
   );
 };

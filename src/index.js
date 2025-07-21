@@ -18,6 +18,8 @@ createServer({
       year: 2021,
       genre: "Pop",
       duration: "3:44",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/6/69/Adele_-_Easy_on_Me.png",
     });
 
     server.create("song", {
@@ -27,6 +29,8 @@ createServer({
       year: 2021,
       genre: "R&B",
       duration: "3:18",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/8/8a/Justin_Bieber_-_Peaches.png",
     });
 
     server.create("song", {
@@ -36,6 +40,8 @@ createServer({
       year: 2020,
       genre: "Synth-pop",
       duration: "3:20",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/0/09/Blinding_Lights.png",
     });
 
     server.create("song", {
@@ -45,6 +51,8 @@ createServer({
       year: 2020,
       genre: "Disco-pop",
       duration: "3:23",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/e/ed/Dua_Lipa_-_Levitating.png",
     });
 
     server.create("song", {
@@ -54,6 +62,8 @@ createServer({
       year: 2019,
       genre: "Pop rock",
       duration: "2:53",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/e/ed/Dua_Lipa_-_Levitating.png",
     });
 
     server.create("song", {
@@ -63,6 +73,8 @@ createServer({
       year: 2020,
       genre: "Synth-pop",
       duration: "3:35",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/3/3f/The_Weeknd_-_Save_Your_Tears.png",
     });
 
     server.create("song", {
@@ -72,6 +84,8 @@ createServer({
       year: 2021,
       genre: "Pop",
       duration: "4:02",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/9/9e/Olivia_Rodrigo_-_drivers_license.png",
     });
 
     server.create("song", {
@@ -81,6 +95,7 @@ createServer({
       year: 2023,
       genre: "K-Pop",
       duration: "3:30",
+      coverImage: "",
     });
 
     server.create("song", {
@@ -90,6 +105,8 @@ createServer({
       year: 2021,
       genre: "Pop rock",
       duration: "2:58",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/4/41/Olivia_Rodrigo_-_good_4_u.png",
     });
 
     server.create("song", {
@@ -99,6 +116,8 @@ createServer({
       year: 2021,
       genre: "Dance-pop",
       duration: "3:50",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/2/2a/Ed_Sheeran_-_Bad_Habits.png",
     });
 
     server.create("song", {
@@ -108,6 +127,7 @@ createServer({
       year: 2019,
       genre: "K-Pop",
       duration: "3:12",
+      coverImage: "",
     });
 
     server.create("song", {
@@ -117,6 +137,8 @@ createServer({
       year: 2021,
       genre: "Dance-pop",
       duration: "2:44",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/5/5e/BTS_-_Butter.png",
     });
 
     server.create("song", {
@@ -126,6 +148,8 @@ createServer({
       year: 2021,
       genre: "Pop rock",
       duration: "3:27",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/7/77/Ed_Sheeran_-_Shivers.png",
     });
 
     server.create("song", {
@@ -135,6 +159,8 @@ createServer({
       year: 2022,
       genre: "Synth-pop",
       duration: "2:47",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/3/3c/Harry_Styles_-_As_It_Was.png",
     });
 
     server.create("song", {
@@ -144,6 +170,8 @@ createServer({
       year: 2022,
       genre: "Synth-pop",
       duration: "3:20",
+      coverImage:
+        "https://upload.wikimedia.org/wikipedia/en/1/1e/Taylor_Swift_-_Anti-Hero.png",
     });
   },
 
