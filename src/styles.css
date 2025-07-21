@@ -116,7 +116,7 @@ li {
   border-radius: 1rem;
 }
 
-.add-songs-btn .btn {
+.btn {
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   position: fixed;
@@ -128,7 +128,7 @@ li {
   transition: all 200ms ease-in-out;
 }
 
-.add-songs-btn .btn:hover {
+.btn:hover {
   background-color: white;
   color: purple;
   cursor: pointer;
@@ -175,6 +175,63 @@ form button:hover {
   transform: scale(1.05);
 }
 
+.song-page-container {
+  background-color: #e4e9ff;
+  height: 99vh;
+  padding: 1rem 2rem;
+  display: flex;
+}
+
+.song-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem;
+  box-shadow: 0.125rem 0.25rem 1rem rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #707eff, purple);
+  color: white;
+  width: 70vw;
+  border-radius: 6px 50% 6px 6px;
+}
+
+.song-page-content h1 {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+#music-player-icon {
+  height: 20rem;
+  width: 30rem;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.song-page-content .icon-info-s {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.song-page-content .icon-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+}
+.song-page-content .icon-info img {
+  height: 50px;
+  width: 50px;
+  background-color: #e4e9ff;
+  border-radius: 50%;
+  padding: 0.25rem;
+}
+
+.song-page-content .icon-info:hover {
+  transform: scale(1.05);
+}
 /* Responsive Design */
 @media (max-width: 480px) {
   .input-btn-result {

@@ -11,6 +11,10 @@ const Song_List = () => {
     id: "",
     title: "",
     artist: "",
+    album: "",
+    year: "",
+    genre: "",
+    duration: "",
   });
   const dialogRef = useRef(null);
   const navigate = useNavigate();

@@ -8,6 +8,10 @@ const Add_Songs = () => {
   const [input, setInput] = useState({
     title: "",
     artist: "",
+    album: "",
+    year: "",
+    genre: "",
+    duration: "",
   });
   const dialogRef = useRef(null);
 
