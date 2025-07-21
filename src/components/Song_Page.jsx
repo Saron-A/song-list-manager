@@ -10,7 +10,7 @@ const Song_Page = () => {
 
   return (
     <div>
-      <h1> Song Details</h1>
+      <h1>Song Details</h1>
       <p>{song.title}</p>
       <p>{song.artist}</p>
     </div>

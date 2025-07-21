@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SongListContext } from "../context/SongListContextHandler.jsx";
 import "../styles.css";
@@ -9,6 +10,7 @@ const Search_Song = () => {
   const [searchResult, setSearchResult] = useState(null); // start as null
   const [showResult, setShowResult] = useState(false); // controls visibility
   const divRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (showResult) {
@@ -34,6 +36,10 @@ const Search_Song = () => {
     setInput("");
   };
 
+  const navigateToSongPage = () => {
+    navigate(`/songpage/${searchResult.id}`);
+  };
+
   return (
     <div className="input-btn-result">
       <form onSubmit={searchSongs} className="input-btn">
@@ -49,10 +55,10 @@ const Search_Song = () => {
       {showResult && (
         <div ref={divRef}>
           {searchResult ? (
-            <>
+            <div className="search-result-song" onClick={navigateToSongPage}>
               <h3>{searchResult.title}</h3>
               <p>{searchResult.artist}</p>
-            </>
+            </div>
           ) : (
             <p>No song found</p>
           )}
