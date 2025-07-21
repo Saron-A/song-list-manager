@@ -1,7 +1,12 @@
 import React from "react";
+import Song_Page from "../components/Song_Page.jsx";
 
 const SongPage = () => {
-  return <div>SongPage</div>;
+  return (
+    <div>
+      <Song_Page />
+    </div>
+  );
 };
 
 export default SongPage;
