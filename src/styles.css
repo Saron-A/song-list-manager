@@ -128,14 +128,14 @@ li {
   transform: scale(1.05);
 }
 
-.add-songs-btn dialog {
+dialog {
   padding: 1rem;
   border: none;
   background-color: #f0f3ff;
   backdrop: black;
 }
 
-.add-songs-btn form {
+form {
   display: flex;
   flex-direction: column;
   gap: 1rem;

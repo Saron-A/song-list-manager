@@ -102,6 +102,12 @@ const Song_List = () => {
                     }
                   />
                   <button type="submit">Edit</button>
+                  <button
+                    type="button"
+                    onClick={() => dialogRef.current.close()}
+                  >
+                    Cancel
+                  </button>
                 </form>
               </dialog>
             </div>

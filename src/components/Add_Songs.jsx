@@ -54,6 +54,9 @@ const Add_Songs = () => {
             required
           />
           <button type="submit">Add</button>
+          <button type="button" onClick={() => dialogRef.current.close()}>
+            Cancel
+          </button>
         </form>
       </dialog>
     </div>
