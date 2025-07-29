@@ -87,14 +87,12 @@ const Song_List = () => {
           <li key={song.id}>
             <div className="song-tile">
               <img src={musicNotes} alt="music notes icon" />
-              <div className="song-info">
+              <div
+                className="song-info clickable"
+                onClick={() => navigateToSongPage(song.id)}
+              >
                 {" "}
-                <h4
-                  className="clickable"
-                  onClick={() => navigateToSongPage(song.id)}
-                >
-                  {song.title}
-                </h4>
+                <h4>{song.title}</h4>
                 <p>By: {song.artist}</p>
               </div>
               <div className="btns">
