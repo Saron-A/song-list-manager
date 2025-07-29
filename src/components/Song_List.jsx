@@ -85,7 +85,10 @@ const Song_List = () => {
               <img src={musicNotes} alt="music notes icon" />
               <div className="song-info">
                 {" "}
-                <h4 onClick={() => navigateToSongPage(song.id)}>
+                <h4
+                  className="clickable"
+                  onClick={() => navigateToSongPage(song.id)}
+                >
                   {song.title}
                 </h4>
                 <p>By: {song.artist}</p>

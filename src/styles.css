@@ -98,6 +98,15 @@ li {
   transform: scale(1.05);
   cursor: pointer;
 }
+.clickable {
+  transition: all 200ms ease-in-out;
+}
+.clickable:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transform: scale(1.1) translateX(0.25rem);
+  font-weight: bold;
+}
 
 .search-result {
   display: flex;
