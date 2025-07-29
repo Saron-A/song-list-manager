@@ -81,14 +81,13 @@ const Song_List = () => {
       <ul>
         {songList.map((song, index) => (
           <li key={song.id}>
-            <div
-              className="song-tile"
-              onClick={() => navigateToSongPage(song.id)}
-            >
+            <div className="song-tile">
               <img src={musicNotes} alt="music notes icon" />
               <div className="song-info">
                 {" "}
-                <h4>{song.title}</h4>
+                <h4 onClick={() => navigateToSongPage(song.id)}>
+                  {song.title}
+                </h4>
                 <p>By: {song.artist}</p>
               </div>
               <div className="btns">
