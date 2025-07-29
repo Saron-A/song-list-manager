@@ -62,6 +62,10 @@ const Song_List = () => {
 
   const handleDelete = async (item) => {
     try {
+      const confirm = window.confirm(
+        "Are you sure you want to delete this song?"
+      );
+      if (!confirm) return;
       await axios.delete(`/api/songs/${item.id}`);
       let newList = songList.filter((song) => song.id !== item.id);
       setSongList(newList);
